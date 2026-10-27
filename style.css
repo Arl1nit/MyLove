@@ -15,33 +15,37 @@ body {
 }
 
 .love-page {
-    position: relative;
     display: grid;
     min-height: 100vh;
     place-items: center;
 }
 
-.letter {
-    position: absolute;
+.love-content {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
     top: 50%;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    transition: top 0.6s ease, left 0.6s ease, transform 0.6s ease;
+}
+
+.letter {
+    width: 1em;
     color: rgb(0, 0, 0);
     font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 700;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-50%);
+    text-align: center;
     transition: opacity 0.3s ease;
 }
 
-.letter-i {
-    left: clamp(1rem, 12vw, 12rem);
-}
-
-.letter-u {
-    right: clamp(1rem, 12vw, 12rem);
-}
-
 .heart {
+    flex-shrink: 0;
     width: min(60vw, 60vh, 42rem);
     height: auto;
     overflow: visible;
@@ -61,4 +65,14 @@ body {
     filter: drop-shadow(0 0 1.5rem rgb(255 0 191/ 80%))
         drop-shadow(0 0 4rem rgb(255 0 191 / 45%));
     transform: scale(1.2);
+}
+
+.love-content.is-selected {
+    top: 2rem;
+    left: 2rem;
+    transform: scale(0.25);
+}
+
+.love-content.is-selected .letter {
+    opacity: 0.72;
 }
