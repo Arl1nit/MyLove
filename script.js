@@ -1,0 +1,1 @@
+// The page is intentionally static; this file is loaded for future interactions.

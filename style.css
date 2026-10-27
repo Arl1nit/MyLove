@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.love-page {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+
+.heart {
+    width: min(60vw, 60vh, 42rem);
+    height: auto;
+    overflow: visible;
+    opacity: 0.72;
+    filter: none;
+    transform: scale(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.heart path {
+    fill: rgb(255, 0, 191);
+}
+
+.heart:hover {
+    filter: drop-shadow(0 0 1.5rem rgb(255 0 191/ 80%))
+        drop-shadow(0 0 4rem rgb(255 0 191 / 45%));
+    transform: scale(1.2);
+}
