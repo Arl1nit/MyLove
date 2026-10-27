@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 html,
@@ -14,15 +15,37 @@ body {
 }
 
 .love-page {
+    position: relative;
     display: grid;
     min-height: 100vh;
     place-items: center;
+}
+
+.letter {
+    position: absolute;
+    top: 50%;
+    color: rgb(0, 0, 0);
+    font-size: clamp(4rem, 12vw, 12rem);
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+}
+
+.letter-i {
+    left: clamp(1rem, 12vw, 12rem);
+}
+
+.letter-u {
+    right: clamp(1rem, 12vw, 12rem);
 }
 
 .heart {
     width: min(60vw, 60vh, 42rem);
     height: auto;
     overflow: visible;
+    pointer-events: none;
     opacity: 0.72;
     filter: none;
     transform: scale(1);
@@ -31,6 +54,7 @@ body {
 
 .heart path {
     fill: rgb(255, 0, 191);
+    pointer-events: visiblePainted;
 }
 
 .heart:hover {
